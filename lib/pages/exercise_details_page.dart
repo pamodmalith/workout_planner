@@ -43,7 +43,7 @@ class _ExerciseDetailsPageState extends State<ExerciseDetailsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "$formattedDate $formattedDay",
+              "${formattedDate.toUpperCase()} $formattedDay",
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
