@@ -77,7 +77,9 @@ class _AddNewPageState extends State<AddNewPage> {
                         imageUrl: exercise.exerciseImageUrl,
                         noOfMinutes: exercise.noOfMinutes,
                         isAdded: userData.exerciseList.contains(exercise),
-                        isFavorite: userData.favExerciseList.contains(exercise),
+                        isFavorite: userData.favExerciseList.any(
+                          (item) => item.id == exercise.id,
+                        ),
                         toggleAddExercise: () {
                           setState(() {
                             if (userData.exerciseList.contains(exercise)) {
@@ -92,7 +94,9 @@ class _AddNewPageState extends State<AddNewPage> {
                         },
                         toggleAddFavoriteExercise: () {
                           setState(() {
-                            if (userData.favExerciseList.contains(exercise)) {
+                            if (userData.favExerciseList.any(
+                              (item) => item.id == exercise.id,
+                            )) {
                               userData.removeFavoriteExercise(exercise);
                               // print("Favorite Exercise Removed: ${userData.favExerciseList.last.exerciseName}");
                               return;
@@ -131,8 +135,8 @@ class _AddNewPageState extends State<AddNewPage> {
                         noOfMinuites: equipment.noOfMinutes,
                         noOfCalories: equipment.noOfCalories,
                         isAdded: userData.equipmentList.contains(equipment),
-                        isFavorite: userData.favEquipmentList.contains(
-                          equipment,
+                        isFavorite: userData.favEquipmentList.any(
+                          (item) => item.id == equipment.id,
                         ),
                         toggleAddEquipment: () {
                           setState(() {
@@ -146,7 +150,9 @@ class _AddNewPageState extends State<AddNewPage> {
                         },
                         toggleAddFavoriteEquipment: () {
                           setState(() {
-                            if (userData.favEquipmentList.contains(equipment)) {
+                            if (userData.favEquipmentList.any(
+                              (item) => item.id == equipment.id,
+                            )) {
                               userData.removeFavoriteEquipment(equipment);
                             } else {
                               userData.addFavoriteEquipment(equipment);

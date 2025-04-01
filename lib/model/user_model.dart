@@ -33,7 +33,9 @@ class User {
   // Methods
   // Add Exercise
   void addExercise(Exercise exercise) {
-    exerciseList.add(exercise);
+    if (!exerciseList.any((element) => element.id == exercise.id)) {
+      exerciseList.add(exercise);
+    }
   }
 
   // Remove Exercise
@@ -53,7 +55,9 @@ class User {
 
   // Add Equipment
   void addEquipment(Equipment equipment) {
-    equipmentList.add(equipment);
+    if (!equipmentList.any((element) => element.id == equipment.id)) {
+      equipmentList.add(equipment);
+    }
   }
 
   // Remove Equipment
@@ -63,11 +67,13 @@ class User {
 
   // Add Favorite Equipment
   void addFavoriteEquipment(Equipment equipment) {
-    favEquipmentList.add(equipment);
+    if (!favEquipmentList.any((item) => item.id == equipment.id)) {
+      favEquipmentList.add(equipment);
+    }
   }
 
   // Remove Favorite Equipment
   void removeFavoriteEquipment(Equipment equipment) {
-    favEquipmentList.remove(equipment);
+    favEquipmentList.removeWhere((item) => item.id == equipment.id);
   }
 }

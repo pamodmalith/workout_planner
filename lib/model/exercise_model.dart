@@ -12,4 +12,12 @@ class Exercise {
     required this.noOfMinutes,
     required this.completed,
   });
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is Exercise && other.id == id;
+  }
+
+  @override
+  int get hashCode => id.hashCode;
 }
