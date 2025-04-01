@@ -52,15 +52,16 @@ class _FavouritePageState extends State<FavouritePage> {
                   ),
                 ),
                 SizedBox(height: 10),
-                Text(
-                  "Here are all your favorited Workouts",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: kMainColor,
+                if (userData.favExerciseList.isNotEmpty)
+                  Text(
+                    "Here are all your favorited Workouts",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: kMainColor,
+                    ),
                   ),
-                ),
-                SizedBox(height: 20),
+                if (userData.favExerciseList.isNotEmpty) SizedBox(height: 20),
                 // Exercise Grid View
                 GridView.builder(
                   shrinkWrap: true,
@@ -115,14 +116,15 @@ class _FavouritePageState extends State<FavouritePage> {
 
                 // Equipment
                 SizedBox(height: 10),
-                Text(
-                  "Here are all your favorited Equipment",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: kMainColor,
+                if (userData.favEquipmentList.isNotEmpty)
+                  Text(
+                    "Here are all your favorited Equipment",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: kMainColor,
+                    ),
                   ),
-                ),
                 SizedBox(height: 20),
                 // Equipment Grid View
                 GridView.builder(
