@@ -60,7 +60,10 @@ class _HomePageState extends State<HomePage> {
                     color: kMainBlackColor,
                   ),
                 ),
-                ProgressCard(progressValue: 0.5, total: 100),
+                ProgressCard(
+                  progressValue: userData.calculateTotalCaloriesBurned(),
+                  total: 100,
+                ),
                 SizedBox(height: kDefaultPadding),
                 Text(
                   "Today’s Activity",
