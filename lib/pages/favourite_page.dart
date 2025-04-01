@@ -52,6 +52,21 @@ class _FavouritePageState extends State<FavouritePage> {
                   ),
                 ),
                 SizedBox(height: 10),
+                if (userData.favExerciseList.isEmpty &&
+                    userData.favEquipmentList.isEmpty)
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 1 / 1.5,
+                    child: Center(
+                      child: Text(
+                        "You haven't favorited any Workouts or Equipment yet",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: kMainColor,
+                        ),
+                      ),
+                    ),
+                  ),
                 if (userData.favExerciseList.isNotEmpty)
                   Text(
                     "Here are all your favorited Workouts",
